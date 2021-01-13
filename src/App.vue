@@ -1,10 +1,31 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+  <div>
+    {{messages}}
+    <h1>{{msgShow}}</h1>
+    <button @click="showMsg">click</button>
   </div>
-  <router-view/>
 </template>
+<script lang="ts">
+import { Vue, Options } from 'vue-class-component';
+/* eslint-disable */
+@Options({
+  components:{
+
+  }
+})
+export default class App extends Vue {
+  messages = 'xxx'
+  get msgShow(){
+    return this.messages+'22222'
+  }
+  showMsg() {
+
+    let name: string = `Gene`;
+    this.messages = '11111'
+  }
+}
+
+</script>
 
 <style lang="scss">
 #app {
